@@ -1,0 +1,1 @@
+/home/kristophori/.config/awesome/rc.lua
