@@ -1,4 +1,5 @@
-These dotfiles are released into the public domain, with the exception of:
+These dotfiles are released into the public domain, and are provided as-is without
+any express or implied warranty, with the exception of:
 
     vim/colors/solarized.vim: MIT License
 
