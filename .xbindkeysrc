@@ -1,0 +1,34 @@
+#Increase volume
+"amixer set Master playback 1+"
+    m:0x010 + c:123
+    Mod2 + XF86AudioRaiseVolume
+
+# Decrease volume
+"amixer set Master playback 1-"
+    m:0x10 + c:122
+    Mod2 + XF86AudioLowerVolume
+
+# MPD Pause/Play
+"ncmpcpp toggle"
+    m:0x0 + c:172
+    XF86AudioPlay
+
+# MPD Stop
+"ncmpcpp stop"
+    m:0x0 + c:174
+    XF86AudioPlay
+
+# MPD Prev.
+"ncmpcpp prev"
+    m:0x0 + c:171
+    XF86AudioPrev
+
+# MPD next
+"ncmpcpp next"
+    m:0x0 + c:173
+    XF86AudioNext
+
+"xscreensaver-command -lock"
+    m:0x0 + c:160
+    XF86ScreenSaver
+
