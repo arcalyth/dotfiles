@@ -1,3 +1,6 @@
+# These keybinds are being used on a Lenovo Thinkpad T420, though they may work
+# elsewhere.
+
 #Increase volume
 "amixer set Master playback 1+"
     m:0x010 + c:123
@@ -28,6 +31,7 @@
     m:0x0 + c:173
     XF86AudioNext
 
+# lock button
 "xscreensaver-command -lock"
     m:0x0 + c:160
     XF86ScreenSaver
