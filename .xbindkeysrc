@@ -23,12 +23,12 @@
 
 # MPD Prev.
 "ncmpcpp prev"
-    m:0x0 + c:171
+    m:0x0 + c:173
     XF86AudioPrev
 
 # MPD next
 "ncmpcpp next"
-    m:0x0 + c:173
+    m:0x0 + c:171
     XF86AudioNext
 
 # lock button
