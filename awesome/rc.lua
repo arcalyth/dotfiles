@@ -13,7 +13,6 @@ require("awful.rules")
 require("beautiful")
 require("naughty")
 require("vicious")
-require("obvious")
 ---
 
 -- initialize theeme

@@ -16,4 +16,5 @@ xbindkeys
 unclutter -idle 3 &
 mpd &
 xscreensaver &
+urxvt --loginShell -e ssh-add &
 exec awesome

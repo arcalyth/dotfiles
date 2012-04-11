@@ -16,6 +16,7 @@ alias sleepmode='sudo pm-suspend'
 alias vi='vim'
 alias view='vim -R'
 alias ls='ls --color=auto'
+alias irssi='irssi-notify & irssi'
 
 # == convenience/extension aliases ==
 # - awesome wm conf stuff -
@@ -45,6 +46,9 @@ rot13() { echo "$@" | tr 'a-zA-Z' 'n-za-mN-ZA-M'; }
 # inline shell math :)
 calc() { echo "$@" | bc -l; }
 alias math='calc';
+
+# irssi + notifications
+#irc() { irssi-notify &; irssi; }
 
 # == environment ==
 eval $(dircolors -b ~/.dircolors)
