@@ -33,11 +33,10 @@ alias aur='cd /usr/local/aur/'
 
 # - not really programs -
 alias fclear='clear; fortune -ao'
-alias mclient='ncmpcpp'
 alias pacman-mirrors='sudo reflector -l 5 -c "United States" --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist'
 
 
-# - functions -
+# = functions =
 
 # rot13() - credit: portix
 # http://bbs.archlinux.org/viewtopic.php?pid=564656#p564656
