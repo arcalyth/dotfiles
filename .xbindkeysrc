@@ -1,15 +1,20 @@
 # These keybinds are being used on a Lenovo Thinkpad T420, though they may work
 # elsewhere.
 
+# alsamixer mute, because hardware mute doesn't mute headphones
+"amixer set Master toggle"
+    m:0x0 + c:121
+    XF86AudioMute
+
 #Increase volume
 "amixer set Master playback 1+"
     m:0x010 + c:123
-    Mod2 + XF86AudioRaiseVolume
+    XF86AudioRaiseVolume
 
 # Decrease volume
 "amixer set Master playback 1-"
     m:0x10 + c:122
-    Mod2 + XF86AudioLowerVolume
+    XF86AudioLowerVolume
 
 # MPD Pause/Play
 "ncmpcpp toggle"

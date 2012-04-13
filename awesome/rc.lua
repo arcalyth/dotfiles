@@ -1,7 +1,7 @@
 --  vim: filetype=lua		
 ------------------------------------------
 -- awesome window manager configuration --
--- modified: March 2012			--
+-- modified: April 2012			--
 -- theme: arcane			--
 -- colorscheme: solarize		--
 ------------------------------------------
@@ -31,13 +31,12 @@ editor_cmd = terminal .. " -e " .. editor
 layouts =
 {
     awful.layout.suit.tile.bottom,	-- 1
-    awful.layout.suit.tile.top,		-- 2
-    awful.layout.suit.tile		-- 3
+    awful.layout.suit.tile		-- 2
 }
 ---
 
 -- tags
-tags = awful.tag({ "ֆ", "δ", "Δ", "Ϡ", "μ", "Ω"}, 1, layouts[1])
+tags = awful.tag({ "δ", "Δ", "μ", "Ω"}, 1, layouts[1])
 
 -- top statusbar
 topWibox = awful.wibox({ position = "top", screen = 1, height = 13 })

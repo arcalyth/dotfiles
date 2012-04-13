@@ -47,8 +47,15 @@ rot13() { echo "$@" | tr 'a-zA-Z' 'n-za-mN-ZA-M'; }
 calc() { echo "$@" | bc -l; }
 alias math='calc';
 
-# irssi + notifications
-#irc() { irssi-notify &; irssi; }
+# dictionary definition fetcher
+define() { 
+    if [ -n "$1" ]; then
+        w3m -dump http://freedictionary.org/?Query=$1 | grep -i2 $1 |
+	tail -n+8 | sed ':a;N;$!ba;s/\n\n/\n/g' | head
+    else
+	echo "usage: define <word>"
+    fi
+}
 
 # == environment ==
 eval $(dircolors -b ~/.dircolors)
