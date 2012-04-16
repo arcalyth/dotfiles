@@ -17,6 +17,7 @@ alias vi='vim'
 alias view='vim -R'
 alias ls='ls --color=auto'
 alias irssi='irssi-notify & irssi'
+alias pacman='pacman-color'
 
 # == convenience/extension aliases ==
 # - awesome wm conf stuff -
@@ -49,7 +50,7 @@ alias math='calc';
 # dictionary definition fetcher
 define() { 
     if [ -n "$1" ]; then
-        w3m -dump http://freedictionary.org/?Query=$1 | grep -i2 $1 |
+        w3m -dump http://freedictionary.org/?Query=$1 | grep -i3 $1 |
 	tail -n+8 | sed ':a;N;$!ba;s/\n\n/\n/g' | head
     else
 	echo "usage: define <word>"
