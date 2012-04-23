@@ -50,10 +50,19 @@ alias math='calc';
 # dictionary definition fetcher
 define() { 
     if [ -n "$1" ]; then
-        w3m -dump "http://freedictionary.org/?Query=$@" | grep -i3 "$1" |
+        w3m -dump "http://freedictionary.org/?Query=$1" | grep -i3 "$1" |
 	tail -n+8 | sed ':a;N;$!ba;s/\n\n/\n/g' | head
     else
 	echo "usage: define <word>"
+    fi
+}
+
+# down for everyone, or just me?
+isup() {
+    if [ -n "$1" ]; then
+	w3m -dump "http://isup.me/$1" | head -n1
+    else
+	echo "usage: isup <url>"
     fi
 }
 

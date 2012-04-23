@@ -13,7 +13,7 @@ fi
 
 xrdb -merge ~/.Xresources
 xbindkeys
-unclutter -idle 3 &
+unclutter -idle 2 &
 mpd &
 xscreensaver &
 urxvt --loginShell -e ssh-add &
