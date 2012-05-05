@@ -31,6 +31,7 @@ alias colemak='setxkbmap us -variant colemak'
 
 # - quick navigation -
 alias aur='cd /usr/local/aur/'
+alias gawconf='cd ~/.config/awesome/'
 
 # - not really programs -
 alias fclear='clear; fortune -ao'
@@ -69,7 +70,7 @@ isup() {
 # == environment ==
 eval $(dircolors -b ~/.dircolors)
 export PS1='[\w]\$ '
-export PATH=$PATH:"~/.bin"
+export PATH=$PATH:"~/bin"
 
 # == final execution ==
 fortune -ao
