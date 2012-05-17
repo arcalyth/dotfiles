@@ -30,76 +30,52 @@ editor_cmd = terminal .. " -e " .. editor
 -- layouts
 layouts =
 {
-    awful.layout.suit.tile.bottom,	-- 1
-    awful.layout.suit.tile		-- 2
+    awful.layout.suit.tile,		-- 1, vertical
+    awful.layout.suit.tile.bottom,	-- 2, horizontal
 }
 ---
 
 -- tags
-tags = awful.tag({ "δ", "Δ", "μ", "Ω"}, 1, layouts[1])
+tags = {}
+for s = 1, screen.count() do
+    tags[s] = awful.tag({ "δ", "Δ", "μ", "Ω"}, s, layouts[1])
+end
 
+-- widget definitions
+-- tag list
+tagList = {}
+tgButtons = awful.util.table.join(awful.button({ }, 1, awful.tag.viewonly))
+-- prompt
+cmdPrompt = {}
+-- task list
+taskList = {}
+
+topWibox = {}
+bottomWibox = {}
+tbLeft = {}
+tbRight = {}
 -- top statusbar
-topWibox = awful.wibox({ position = "top", screen = 1, height = 13 })
-    -- awesome menu
-    awesomeMenuItems = {
-       { "restart", awesome.restart },
-       { "quit", awesome.quit }
-    }
-
-   awesomeMenu = awful.menu({ items = { 
-       { "awesome", awesomeMenuItems, beautiful.awesome_icon } 
-    }})
-
-    awesomeMenuLauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-						menu = awesomeMenu })
-
-    -- tag list
-    -- tag list buttons
-    tgButtons = awful.util.table.join(awful.button({ }, 1, awful.tag.viewonly))
-
-    tagList = awful.widget.taglist(1, awful.widget.taglist.label.all, tgButtons)
-
-    -- command prompt
-    cmdPrompt = awful.widget.prompt({ prompt = '|$ ',
-	layout = awful.widget.layout.horizontal.leftright })
-
-    -- task list
-    -- task list buttons
-    tastListButtons = awful.util.table.join(
-	    -- left click
-	    awful.button({ }, 1,
-	    function (c)
-		if c == client.focus then
-		    c.minimized = true
-		elseif not c:isvisible() then
-		     awful.tag.viewonly(c:tags()[1])
-                end
-                -- This will also un-minimize the client, if needed
-                client.focus = c
-                c:raise()
-            end)
-	)
-
-    taskList = awful.widget.tasklist(
-    		function(c) 
-		    return awful.widget.tasklist.label.focused(c, 1, {})
-		end,taskListButtons)
-
-    -- layout indicator
-    --layoutIndicator = awful.widget.layoutbox(1, {})
+for s = 1, screen.count() do
+topWibox[s] = awful.wibox({ position = "top", screen = s, height = 13 })
+tagList[s] = awful.widget.taglist(s, awful.widget.taglist.label.all, tgButtons)
+cmdPrompt[s] = awful.widget.prompt({ prompt = '|$ ',layout = awful.widget.layout.horizontal.leftright })
+taskList[s] = awful.widget.tasklist(
+	function(c) 
+	    return awful.widget.tasklist.label.focused(c, s, {})
+	end,nil)
 
     -- systray
     sysTray = widget({ type = "systray" })
 
-    tbLeft = { awesomeMenuLauncher, tagList, cmdPrompt,
-		taskList, layout = awful.widget.layout.horizontal.leftright }
-    tbRight = { sysTray, layout = awful.widget.layout.horizontal.rightleft }
+    tbLeft[s] = { tagList[s], cmdPrompt[s],
+		taskList[s], layout = awful.widget.layout.horizontal.leftright }
+    tbRight[s] = { sysTray, layout = awful.widget.layout.horizontal.rightleft }
 
-topWibox.widgets = { tbLeft, tbRight, layout=awful.widget.layout.horizontal.rightleft }
+topWibox[s].widgets = { tbLeft[s], tbRight[s], layout=awful.widget.layout.horizontal.rightleft }
 -- end top status bar
 
 -- bottom statusbar
-bottomWibox = awful.wibox({ position = "bottom", screen = 1, height = 13 })
+bottomWibox[s] = awful.wibox({ position = "bottom", screen = s, height = 13 })
     -- separator
     separator = widget({ type = "textbox" })
     separator.text = " / "
@@ -140,7 +116,8 @@ bottomWibox = awful.wibox({ position = "bottom", screen = 1, height = 13 })
     --bbRight = { cpuMeter, memMeter, batMeter, clock }
     bbRight = { clock, separator, batMeter, separator, memMeter, separator, cpuMeter, layout=awful.widget.layout.horizontal.rightleft }
 
-    bottomWibox.widgets = { bbLeft, spacer, bbRight, layout=awful.widget.layout.horizontal.leftright } 
+    bottomWibox[s].widgets = { bbLeft, spacer, bbRight, layout=awful.widget.layout.horizontal.leftright } 
+end
 --- old
 
 -- {{{ Key bindings
@@ -191,7 +168,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
-    awful.key({ modkey }, "r", function () cmdPrompt:run() end)
+    awful.key({ modkey }, "r", function () cmdPrompt[mouse.screen]:run() end)
 
 )
 
