@@ -8,7 +8,7 @@ eval $(ssh-agent)
 
 # Automatically start X, no display manager needed :)
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
-    startx &
-    sleep 3
+    startx 
+    sleep 1
     logout
 fi

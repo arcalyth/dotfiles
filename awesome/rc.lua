@@ -69,9 +69,9 @@ taskList[s] = awful.widget.tasklist(
 
     tbLeft[s] = { tagList[s], cmdPrompt[s],
 		taskList[s], layout = awful.widget.layout.horizontal.leftright }
-    tbRight[s] = { sysTray, layout = awful.widget.layout.horizontal.rightleft }
+    tbRight = { sysTray, layout = awful.widget.layout.horizontal.rightleft }
 
-topWibox[s].widgets = { tbLeft[s], tbRight[s], layout=awful.widget.layout.horizontal.rightleft }
+topWibox[s].widgets = { tbLeft[s], tbRight, layout=awful.widget.layout.horizontal.rightleft }
 -- end top status bar
 
 -- bottom statusbar

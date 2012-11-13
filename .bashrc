@@ -61,7 +61,7 @@ define() {
 # down for everyone, or just me?
 isup() {
     if [ -n "$1" ]; then
-	w3m -dump "http://isup.me/$1" | head -n1
+	w3m -dump "http://downforeveryoneorjustme.com/$1" | head -n1
     else
 	echo "usage: isup <url>"
     fi
