@@ -2,11 +2,12 @@
 # elsewhere.
 
 # alsamixer mute, because hardware mute doesn't mute headphones
+# FIXME: mute toggle desyncs from hardware setting after suspend/resume
 "amixer set Master toggle"
     m:0x0 + c:121
     XF86AudioMute
 
-#Increase volume
+# Increase volume
 "amixer set Master playback 1+"
     m:0x010 + c:123
     XF86AudioRaiseVolume
@@ -31,7 +32,7 @@
     m:0x0 + c:173
     XF86AudioPrev
 
-# MPD next
+# MPD Next
 "ncmpcpp next"
     m:0x0 + c:171
     XF86AudioNext
