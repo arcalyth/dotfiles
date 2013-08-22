@@ -92,10 +92,13 @@ cmdPrompt = {}
 --layoutbox = {}
 
 -- clock
-clock = awful.widget.textclock("%a %H:%M [%F]")
+clock = {} 
 
 -- mpd
 mpdStatus = {}
+
+-- battery
+batMeter = {}
 
 -- tag list
 tagList = {}
@@ -164,6 +167,13 @@ for s = 1, screen.count() do
     	    return "d(^_^)b [" .. args["{Artist}"] .. " - " .. args["{Title}"] .. "]"
     	end
         end, 10)
+
+
+    batMeter[s] = wibox.widget.textbox()
+    vicious.register(batMeter[s], vicious.widgets.bat, "$1pwr $2% // ", 61, "BAT0")
+
+    clock[s] = awful.widget.textclock("%a %H:%M [%F]")
+
     -- Create the wibox
     topWibox[s] = awful.wibox({ position = "top", screen = s })
 
@@ -191,7 +201,8 @@ for s = 1, screen.count() do
     bl_layout:add(mpdStatus[s])
 
     local br_layout = wibox.layout.fixed.horizontal()
-    br_layout:add(clock)
+    br_layout:add(batMeter[s])
+    br_layout:add(clock[s])
 
     local bLayout = wibox.layout.align.horizontal()
     bLayout:set_left(bl_layout)
