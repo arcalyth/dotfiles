@@ -6,10 +6,10 @@ theme = {}
 
 theme.font          = "proggycleantt 10"
 
-theme.bg_normal     = "#093345"
-theme.bg_focus      = "#1e4f6b"
-theme.bg_urgent     = "#7aa5a0"
-theme.bg_minimize   = "#3c615d"
+theme.bg_normal     = "#0e3432"
+theme.bg_focus      = "#0e5753"
+theme.bg_urgent     = "#0e3f3d"
+theme.bg_minimize   = "#041212"
 
 theme.fg_normal     = "#9cc2bf"
 theme.fg_focus      = "#d8e2da"
@@ -17,8 +17,8 @@ theme.fg_urgent     = "#00b5dc"
 theme.fg_minimize   = "#7b8d93"
 
 theme.border_width  = "1"
-theme.border_normal = "#023e57"
-theme.border_focus  = "#0f3b45"
+theme.border_normal = "#0e3432"
+theme.border_focus  = "#0f3c3a"
 theme.border_marked = "#227571"
 
 -- There are other variable sets
@@ -32,8 +32,8 @@ theme.border_marked = "#227571"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Display the taglist squares
-theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
-theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
+theme.taglist_squares_sel   = "/home/kristophori/.config/awesome/themes/arcane/taglist/squarefw.png"
+theme.taglist_squares_unsel = "/home/kristophori/.config/awesome/themes/arcane/taglist/squarew.png"
 
 theme.tasklist_floating_icon = "/usr/share/awesome/themes/default/tasklist/floatingw.png"
 
@@ -74,7 +74,9 @@ theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/defau
 theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_active.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "awsetbg -a /home/kristophori/.config/awesome/themes/arcane/background.jpg" }
+--theme.wallpaper = "/home/kristophori/.config/awesome/themes/arcane/background.jpg"
+--theme.wallpaper = "/home/kristophori/media/backgrounds/wallpaper-1777270.jpg"
+theme.wallpaper = "/home/kristophori/wallpaper-1777270-mod.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"

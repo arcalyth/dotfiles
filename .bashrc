@@ -5,19 +5,20 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
 # == remap aliases ==
 # - sudo convenience -
-alias poweroff='sudo poweroff'
-alias reboot='sudo reboot'
-alias sleepmode='sudo pm-suspend'
+alias poweroff='systemctl poweroff'
+alias reboot='systemctl reboot'
 
 # - general remaps -
 alias vi='vim'
 alias view='vim -R'
 alias ls='ls --color=auto'
 alias irssi='irssi-notify & irssi'
-alias pacman='pacman-color'
+alias n='ncmpcpp'
+alias a='alsamixer'
+alias cmatrix='cmatrix -axu5 -C cyan'
+alias s='systemctl suspend'
 
 # == convenience/extension aliases ==
 # - awesome wm conf stuff -
@@ -27,6 +28,7 @@ alias awmerge='cp ~/.config/awesome/rc.lua.test ~/.config/awesome/rc.lua'
 
 # keyboard layout shit 
 alias qwerty='setxkbmap us'
+alias qwfpgj='setxkbmap us'
 alias colemak='setxkbmap us -variant colemak'
 
 # - quick navigation -
@@ -36,7 +38,7 @@ alias gawconf='cd ~/.config/awesome/'
 # - not really programs -
 alias fclear='clear; fortune -ao'
 alias pacman-mirrors='sudo reflector -l 5 -c "United States" --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist'
-
+alias life='vim ~/life/life-plan'
 
 # = functions =
 
@@ -71,6 +73,7 @@ isup() {
 eval $(dircolors -b ~/.dircolors)
 export PS1='[\w]\$ '
 export PATH=$PATH:"~/bin"
+export EDITOR='vim'
 
 # == final execution ==
 fortune -ao

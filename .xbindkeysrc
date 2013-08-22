@@ -1,21 +1,22 @@
 # These keybinds are being used on a Lenovo Thinkpad T420, though they may work
 # elsewhere.
 
+# handled by ACPI now, hopefully overrides xscreensaver
 # alsamixer mute, because hardware mute doesn't mute headphones
 # FIXME: mute toggle desyncs from hardware setting after suspend/resume
-"amixer set Master toggle"
-    m:0x0 + c:121
-    XF86AudioMute
-
-# Increase volume
-"amixer set Master playback 1+"
-    m:0x010 + c:123
-    XF86AudioRaiseVolume
-
-# Decrease volume
-"amixer set Master playback 1-"
-    m:0x10 + c:122
-    XF86AudioLowerVolume
+#"amixer set Master toggle"
+#    m:0x0 + c:121
+#    XF86AudioMute
+#
+## Increase volume
+#"amixer set Master playback 1+"
+#    m:0x010 + c:123
+#    XF86AudioRaiseVolume
+#
+## Decrease volume
+#"amixer set Master playback 1-"
+#    m:0x10 + c:122
+#    XF86AudioLowerVolume
 
 # MPD Pause/Play
 "ncmpcpp toggle"
